@@ -1,0 +1,25 @@
+.page-box {
+  margin: 0;
+  padding: 0;
+  transition: .3s padding;
+}
+
+.view-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-top: 1px;
+  margin-bottom: 32px;
+}
+
+.wrap {
+  width: 55rem;
+  min-width: 55rem;
+  max-width: 55rem;
+  margin: auto;
+}
+
+.dashboard {
+  margin: 32px 0 -8px;
+}
