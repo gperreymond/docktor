@@ -1,21 +1,21 @@
 {
   "name": "docktor",
   "version": "1.0.0",
-  "description": "Docker orchestration UI, base on docker-compose.",
+  "description": "CMS md file oriented.",
   "main": "index.js",
   "scripts": {
-    "start": "marko-starter server",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=production marko-starter build"
+    "start": "react-scripts start",
+    "test:standard": "node_modules/.bin/standard --fix --verbose | snazzy",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gperreymond/docktor.git"
   },
   "keywords": [
-    "docker",
-    "orchestration",
-    "ui"
+    "cms",
+    "file",
+    "node"
   ],
   "author": {
     "name": "Gilles Perreymond",
@@ -34,17 +34,35 @@
   "homepage": "https://github.com/gperreymond/docktor#readme",
   "dependencies": {},
   "devDependencies": {
-    "babel-preset-es2015": "6.24.1",
-    "docker-remote-api": "4.4.1",
-    "eslint": "3.19.0",
-    "eslint-config-marko": "1.0.1",
-    "jquery": "3.2.1",
-    "lasso-babel-transform": "1.0.0",
-    "lasso-marko": "2.3.0",
-    "marko": "4.2.8",
-    "marko-starter": "1.1.3",
-    "modify-babel-preset": "3.2.1",
-    "pouchdb": "6.2.0",
-    "whatwg-fetch": "2.0.3"
+    "debug": "2.6.6",
+    "lodash": "^4.17.4",
+    "pouchdb": "^6.2.0",
+    "react": "15.5.4",
+    "react-addons-test-utils": "15.5.1",
+    "react-cookie": "2.0.6",
+    "react-dom": "15.5.4",
+    "react-dropzone": "3.13.1",
+    "react-markdown": "2.5.0",
+    "react-router-dom": "4.1.1",
+    "react-scripts": "0.9.5",
+    "reflux": "6.4.1",
+    "snazzy": "7.0.0",
+    "standard": "10.0.2",
+    "uuid": "3.0.1"
+  },
+  "standard": {
+    "globals": [
+      "before",
+      "after",
+      "describe",
+      "it",
+      "expect"
+    ],
+    "ignore": [
+      "_marko/**",
+      "build/**",
+      "coverage/**",
+      "public/**"
+    ]
   }
 }

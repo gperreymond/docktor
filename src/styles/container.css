@@ -1,0 +1,45 @@
+.container {
+  margin: auto;
+  margin-top: 90px;
+  width: 55rem;
+  min-width: 55rem;
+  max-width: 55rem;
+}
+
+.box {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 1px 0 rgba(61, 119, 180, 0.12), 0 0.25rem 12px 0 rgba(91, 139, 199, 0.24);
+  border-radius: 4px;
+  position: relative;
+  padding: 34px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.container-title.error {
+  color: #b32d00;
+  font-family: 'Anton', sans-serif;
+}
+
+.container-title {
+  text-align: center;
+  font-size: 30px;
+  color: #5da3c7;
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 1px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container-desc {
+  text-align: center;
+  font-size: 20px;
+  color: ##242628;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

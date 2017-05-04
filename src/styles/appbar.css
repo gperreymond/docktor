@@ -1,6 +1,6 @@
 .header {
-  background: #5295ff;
-  box-shadow: 0 1px 0 0 #3a85ff;
+  background: #5da3c7;
+  box-shadow: 0 2px 0 0 #4194be;
   color: rgba(255, 255, 255, 0.48);
   position: absolute;
   -webkit-transform: translateZ(0);
@@ -8,10 +8,6 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
-  height: 4rem;
-  line-height: 64px;
-  line-height: 4rem;
   z-index: 1000;
   text-align: center;
   -webkit-user-select: none;
@@ -21,23 +17,23 @@
 }
 
 .header-projects {
-  float: left;
-  margin-right: 16px;
-  margin-right: 1rem;
+  margin: auto;
+  width: 55rem;
+  min-width: 55rem;
+  max-width: 55rem;
 }
 
 .header-logo {
-  height: 64px;
-  height: 4rem;
-  width: 64px;
-  width: 4rem;
-  line-height: 64px;
-  line-height: 4rem;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  margin-left: 0;
+  border: solid 6px #8dbfd8;
+  border-radius: 50%;
   text-align: center;
   display: block;
   float: left;
-  background: url(./images/logo.png) no-repeat center;
-  background-size: 3rem;
+  background: #ecf4f8;
   transition: .3s background;
 }
 
@@ -45,8 +41,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  line-height: 64px;
-  line-height: 4rem;
+  line-height: 56px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -55,12 +50,10 @@
   transition: background 0.2s;
   color: #fff;
   font-weight: 700;
-  padding: 0 28px 0 16px;
-  padding: 0 1.75rem 0 1rem;
+  padding: 0;
   float: left;
   position: relative;
   z-index: 2;
   max-width: 200px;
-  font-size: 17px;
-  font-size: 1.0625rem;
+  font-size: 20px;
 }

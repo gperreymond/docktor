@@ -15,9 +15,11 @@ body {
   background: #f9fbff;
 }
 
-.page {
-  margin: 0;
-  padding: 0;
-  padding-top: 64px;
-  padding-top: 4rem;
+.text-center {
+  text-align: center;
 }
+
+@import './appbar.css';
+@import './appbar-nav.css';
+@import './container.css';
+@import './form/buttons.css';
