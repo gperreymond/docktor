@@ -27,15 +27,19 @@
   height: 36px;
   line-height: 36px;
   min-width: 36px;
-  padding: 0 16px;
+}
+
+.button.circle {
+  border-radius: 50%;
+  height: auto;
+  width: auto;
 }
 
 .button.huge {
-  font-size: 20px;
+  font-size: 30px;
   height: 50px;
   line-height: 50px;
-  min-width: 36px;
-  padding: 0 36px;
+  min-width: 50px;
 }
 
 /* COLORS */

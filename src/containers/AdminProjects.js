@@ -3,6 +3,8 @@
 import React from 'react'
 import Reflux from 'reflux'
 
+import ProjectCard from './../components/ProjectCard'
+
 import Store from './../Store'
 import Actions from './../Actions'
 
@@ -19,13 +21,25 @@ class AdminPages extends Reflux.Component {
       )
     }
     return (
-      <div className="box">
-        <div className="container-title">Welcome to the workspace projects</div>
-        { this.state.projects.length === 0 &&
-          <div>
-            <div className="container-desc">No project found at the moment!</div>
-            <br /><br />
-            <div className="text-center"><a onClick={this.handlerProjectCreate} className="button green huge">New project</a></div>
+      <div>
+        {this.state.projects.total_rows === 0 &&
+          <div className="box">
+            <div className="container-title">Welcome to the workspace projects</div>
+            <div>
+              <div className="container-desc">No project found at the moment!</div>
+              <br /><br />
+              <div className="text-center"><a onClick={this.handlerProjectCreate} className="button green huge">New project</a></div>
+            </div>
+          </div>
+        }
+        {this.state.projects.total_rows > 0 &&
+          <div className="projects-cards-box">
+            <a onClick={this.handlerProjectCreate} className="button green huge add">+</a>
+            <div className="projects-cards">
+              {this.state.projects.rows.map((item) => {
+                return (<ProjectCard key={item.id} data={item.doc} />)
+              })}
+            </div>
           </div>
         }
       </div>

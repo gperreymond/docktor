@@ -1,8 +1,8 @@
 .header {
   background: #5da3c7;
-  box-shadow: 0 2px 0 0 #4194be;
+  box-shadow: 0 2px 0 0 #8dbfd8;
   color: rgba(255, 255, 255, 0.48);
-  position: absolute;
+  position: fixed;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   top: 0;
@@ -28,12 +28,16 @@
   width: 40px;
   margin: 8px;
   margin-left: 0;
-  border: solid 6px #8dbfd8;
+  border: solid 2px #fff;
   border-radius: 50%;
+  box-shadow: 0 0 1px 0 rgba(61, 119, 180, 0.12), 0 0.25rem 12px 0 rgba(91, 139, 199, 0.24);
+  background: url('images/logo-icon.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover;
   text-align: center;
   display: block;
   float: left;
-  background: #ecf4f8;
   transition: .3s background;
 }
 

@@ -13,6 +13,7 @@ const handler = (context) => {
     createdAt: new Date()
   }).then((result) => {
     debug('project created %o', result)
+    context.setState({loading: false, message: '...'})
   }).catch(console.error)
 }
 

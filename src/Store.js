@@ -15,7 +15,10 @@ class Store extends Reflux.Store {
       loading: true,
       message: '...',
       // data
-      projects: []
+      projects: {
+        total_rows: 0,
+        rows: []
+      }
     }
     debug('constructor')
     this.listenables = [Actions]

@@ -1,0 +1,67 @@
+.projects-cards-box {
+  margin: auto;
+  width: 55rem;
+  min-width: 55rem;
+  max-width: 55rem;
+}
+
+.projects-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-grow: 4;
+  padding: 0;
+  margin: 0;
+  margin-left: 48px;
+  margin-bottom: 8px;
+}
+
+.project-card {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 1px 0 rgba(61, 119, 180, 0.12), 0 0.25rem 12px 0 rgba(91, 139, 199, 0.24);
+  border-radius: 4px;
+  border-color: transparent;
+  margin: 8px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  margin-right: 0;
+  margin-left: 16px;
+  padding: 0;
+  position: relative;
+  transition: 0.3s box-shadow, 0.3s background;
+  width: calc((55rem - 48px)/3 - 16px);
+  height: 190px;
+}
+
+.project-card h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  font-weight: 700;
+  transition: 0.3s color;
+  position: relative;
+  z-index: 20;
+  margin-top: 100px;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.project-update-date {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #8dbfd8;
+  font-size: 13px;
+  position: relative;
+  z-index: 20;
+  padding: 20px;
+  padding-top: 8px;
+  padding-bottom: 0;
+}
+
+.button.add {
+  position: fixed;
+}

@@ -13,7 +13,7 @@ const handler = (page, context) => {
   context.databases.projects.info().then((info) => {
     debug('data info %o', info)
     if (info.doc_count === 0) {
-      context.setState({projects: []})
+      context.setState({projects: {total_rows: 0, rows: []}})
     } else {
       context.databases.projects.changes({
         since: 'now',
@@ -21,11 +21,9 @@ const handler = (page, context) => {
         include_docs: true
       }).on('change', (change) => {
         debug('projects change %o', change)
-        if (change.ok === true) {
-          context.databases.projects.allDocs({include_docs: true}).then((docs) => {
-            this.context.setState({projects: docs})
-          })
-        }
+        context.databases.projects.allDocs({include_docs: true}).then((docs) => {
+          context.setState({projects: docs})
+        })
       }).on('error', console.error)
     }
     return context.databases.projects.allDocs({include_docs: true}).then((docs) => {

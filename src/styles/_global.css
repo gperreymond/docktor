@@ -15,6 +15,10 @@ body {
   background: #f9fbff;
 }
 
+.float-right {
+  float: right;
+}
+
 .text-center {
   text-align: center;
 }
@@ -22,4 +26,5 @@ body {
 @import './appbar.css';
 @import './appbar-nav.css';
 @import './container.css';
+@import './cards.css';
 @import './form/buttons.css';
