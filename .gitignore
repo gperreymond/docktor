@@ -38,3 +38,8 @@ jspm_packages
 
 # React
 build
+
+#Infra
+docker/couchdb/data/
+docker/nginx/log/
+docker/postgres/data/

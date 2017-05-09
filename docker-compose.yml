@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+
+  couchdb:
+    image: klaemo/couchdb:latest
+    environment:
+      COUCHDB_USER: infra
+      COUCHDB_PASSWORD: infra
+    volumes:
+      - ./docker/couchdb/default.d:/usr/local/etc/couchdb/default.d
+      - ./docker/couchdb/data:/usr/local/var/lib/couchdb
+    networks:
+      infra:
+        ipv4_address: 172.20.0.2
+
+networks:
+  infra:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1

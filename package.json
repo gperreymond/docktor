@@ -35,8 +35,8 @@
   "dependencies": {},
   "devDependencies": {
     "debug": "2.6.6",
-    "lodash": "^4.17.4",
-    "pouchdb": "^6.2.0",
+    "lodash": "4.17.4",
+    "pouchdb": "6.2.0",
     "react": "15.5.4",
     "react-addons-test-utils": "15.5.1",
     "react-cookie": "2.0.6",
