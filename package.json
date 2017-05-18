@@ -1,10 +1,11 @@
 {
   "name": "docktor",
   "version": "1.0.0",
-  "description": "CMS md file oriented.",
-  "main": "index.js",
+  "description": "Surveys Platform, no databases",
+  "proxy": "http://localhost:4000",
   "scripts": {
     "start": "react-scripts start",
+    "start:api": "NODE_ENV=development node_modules/.bin/nodemon --config nodemon.json api",
     "test:standard": "node_modules/.bin/standard --fix --verbose | snazzy",
     "build": "react-scripts build"
   },
@@ -13,9 +14,8 @@
     "url": "git+https://github.com/gperreymond/docktor.git"
   },
   "keywords": [
-    "cms",
-    "file",
-    "node"
+    "surveys",
+    "platform"
   ],
   "author": {
     "name": "Gilles Perreymond",
@@ -32,14 +32,20 @@
     "url": "https://github.com/gperreymond/docktor/issues"
   },
   "homepage": "https://github.com/gperreymond/docktor#readme",
-  "dependencies": {},
-  "devDependencies": {
-    "debug": "2.6.6",
+  "dependencies": {
+    "fs-extra": "3.0.1",
+    "glob": "7.1.1",
+    "hapi": "16.1.1",
     "lodash": "4.17.4",
-    "pouchdb": "6.2.0",
+    "request": "2.81.0",
+    "yamljs": "0.2.10"
+  },
+  "devDependencies": {
+    "debug": "2.6.7",
+    "nodemon": "1.11.0",
     "react": "15.5.4",
     "react-addons-test-utils": "15.5.1",
-    "react-cookie": "2.0.6",
+    "react-cookie": "2.0.7",
     "react-dom": "15.5.4",
     "react-dropzone": "3.13.1",
     "react-markdown": "2.5.0",
@@ -52,6 +58,8 @@
   },
   "standard": {
     "globals": [
+      "Headers",
+      "fetch",
       "before",
       "after",
       "describe",

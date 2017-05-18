@@ -10,6 +10,7 @@ import Actions from './../Actions'
 
 import AppBar from './../components/AppBar'
 import AdminProjects from './../containers/AdminProjects'
+import AdminProjectActions from './../containers/AdminProjectActions'
 
 const debug = Debug('docktor:pages')
 
@@ -24,11 +25,14 @@ const None = () => {
 
 class Stacks extends Reflux.Component {
   componentDidMount () {
-    debug('componentDidMount %s %s', this.pageName, this.props.match.params.container)
+    debug('componentDidMount %s %o', this.pageName, this.props.match.params)
     document.title = capitalize(this.props.match.params.container) + ' | Docktor'
     switch (this.props.match.params.container) {
       case 'projects':
         this.pageContainer = <AdminProjects />
+        break
+      case 'project':
+        this.pageContainer = <AdminProjectActions />
         break
       case 'plugins':
         this.pageContainer = <None />
@@ -51,6 +55,9 @@ class Stacks extends Reflux.Component {
     switch (this.props.match.params.container) {
       case 'projects':
         this.pageContainer = <AdminProjects />
+        break
+      case 'project':
+        this.pageContainer = <AdminProjectActions />
         break
       case 'pages':
         this.pageContainer = <None />

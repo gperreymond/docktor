@@ -33,6 +33,7 @@
   transition: 0.3s box-shadow, 0.3s background;
   width: calc((55rem - 68px)/3 - 16px);
   height: 190px;
+  cursor: pointer;
 }
 
 .project-card h3 {

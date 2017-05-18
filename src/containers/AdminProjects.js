@@ -8,7 +8,7 @@ import ProjectCard from './../components/ProjectCard'
 import Store from './../Store'
 import Actions from './../Actions'
 
-class AdminPages extends Reflux.Component {
+class AdminProjects extends Reflux.Component {
   constructor (props) {
     super(props)
     this.store = Store
@@ -37,7 +37,7 @@ class AdminPages extends Reflux.Component {
             <a onClick={this.handlerProjectCreate} className="button green huge add">+</a>
             <div className="projects-cards">
               {this.state.projects.rows.map((item) => {
-                return (<ProjectCard key={item.id} data={item.doc} />)
+                return (<ProjectCard key={item.id} data={item} />)
               })}
             </div>
           </div>
@@ -47,4 +47,4 @@ class AdminPages extends Reflux.Component {
   }
 }
 
-export default AdminPages
+export default AdminProjects

@@ -16,6 +16,7 @@ const Application = () => (
   <Router>
     <Switch>
       <Route exact path="/admin/:container" component={Admin} />
+      <Route exact path="/admin/:container/:id" component={Admin} />
       <Route component={NoMatch} />
     </Switch>
   </Router>

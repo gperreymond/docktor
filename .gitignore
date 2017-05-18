@@ -40,6 +40,4 @@ jspm_packages
 build
 
 #Infra
-docker/couchdb/data/
-docker/nginx/log/
-docker/postgres/data/
+api/data
