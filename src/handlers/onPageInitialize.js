@@ -7,7 +7,7 @@ const debug = Debug('docktor:actions')
 
 const handler = (page, context) => {
   debug('onPageInitialize %s', page)
-  context.setState({loading: true, message: 'Chargement des data...'})
+  context.setState({loading: true, message: 'Initializing page...', currentProject: false})
   request({
     method: 'GET',
     headers: {
@@ -17,7 +17,8 @@ const handler = (page, context) => {
     uri: window.location.origin + '/api/projects'
   }, (error, response, body) => {
     if (error) {
-      return console.error(error)
+      console.error(error)
+      return context.setState({loading: false, message: '...'})
     }
     if (response.statusCode === 200) {
       debug('projects %o', body)

@@ -24,6 +24,13 @@ const None = () => {
 }
 
 class Stacks extends Reflux.Component {
+  constructor (props) {
+    super(props)
+    this.pageName = 'Admin' // for debug only
+    this.pageContainer = <None />
+    debug('constructor %s', this.pageName)
+    this.store = Store
+  }
   componentDidMount () {
     debug('componentDidMount %s %o', this.pageName, this.props.match.params)
     document.title = capitalize(this.props.match.params.container) + ' | Docktor'
@@ -32,7 +39,7 @@ class Stacks extends Reflux.Component {
         this.pageContainer = <AdminProjects />
         break
       case 'project':
-        this.pageContainer = <AdminProjectActions />
+        this.pageContainer = <AdminProjectActions project={this.props.match.params.id} />
         break
       case 'plugins':
         this.pageContainer = <None />
@@ -67,13 +74,6 @@ class Stacks extends Reflux.Component {
         this.pageContainer = <None />
     }
     Actions.pageInitialize(this.pageName)
-  }
-  constructor (props) {
-    super(props)
-    this.pageName = 'Admin' // for debug only
-    this.pageContainer = <None />
-    debug('constructor %s', this.pageName)
-    this.store = Store
   }
   render () {
     debug('render %s', this.pageName)

@@ -4,8 +4,8 @@ import request from 'request'
 const debug = Debug('docktor:actions')
 
 const handler = (context) => {
-  debug('onProjectCreate')
-  context.setState({working: true})
+  debug('onProjectsFind')
+  context.setState({loading: true, message: 'Initializing projects...'})
   request({
     method: 'GET',
     headers: {
@@ -16,7 +16,7 @@ const handler = (context) => {
   }, (error, response, body) => {
     if (error) {
       console.error(error)
-      return context.setState({working: false})
+      return context.setState({loading: false, message: '...'})
     }
     if (response.statusCode === 200) {
       let projects = body
@@ -24,7 +24,7 @@ const handler = (context) => {
       return context.setState({loading: false, message: '...', projects})
     }
     console.error(body)
-    return context.setState({working: false})
+    return context.setState({loading: false, message: '...'})
   })
 }
 

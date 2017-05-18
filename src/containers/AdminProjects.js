@@ -2,17 +2,25 @@
 
 import React from 'react'
 import Reflux from 'reflux'
+import Debug from 'debug'
 
 import ProjectCard from './../components/ProjectCard'
 
 import Store from './../Store'
 import Actions from './../Actions'
 
+const debug = Debug('docktor:containers')
+
 class AdminProjects extends Reflux.Component {
   constructor (props) {
     super(props)
+    this.containerName = 'AdminProjects' // for debug only
+    debug('constructor %s %o', this.containerName, this.props.project)
     this.store = Store
     this.handlerProjectCreate = () => Actions.projectCreate()
+  }
+  componentDidMount () {
+    debug('componentDidMount %s', this.containerName)
   }
   render () {
     if (this.props.loading) {

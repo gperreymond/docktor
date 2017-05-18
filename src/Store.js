@@ -14,13 +14,13 @@ class Store extends Reflux.Store {
       // loader
       loading: true,
       message: '...',
-      // work in progress
-      working: false,
       // data
       projects: {
         total_rows: 0,
         rows: []
-      }
+      },
+      // others
+      currentProject: false
     }
     debug('constructor')
     this.listenables = [Actions]
@@ -34,6 +34,7 @@ class Store extends Reflux.Store {
   onPageComplete (page) { this.handlers.onPageComplete(page, this) }
   onProjectCreate () { this.handlers.onProjectCreate(this) }
   onProjectsFind () { this.handlers.onProjectsFind(this) }
+  onProjectLoad (id) { this.handlers.onProjectLoad(id, this) }
 }
 
 export default Store

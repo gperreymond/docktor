@@ -1,6 +1,6 @@
 {
   "name": "docktor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Surveys Platform, no databases",
   "proxy": "http://localhost:4000",
   "scripts": {
@@ -36,6 +36,7 @@
     "fs-extra": "3.0.1",
     "glob": "7.1.1",
     "hapi": "16.1.1",
+    "joi": "10.4.2",
     "lodash": "4.17.4",
     "request": "2.81.0",
     "yamljs": "0.2.10"
@@ -58,6 +59,7 @@
   },
   "standard": {
     "globals": [
+      "Raven",
       "Headers",
       "fetch",
       "before",
@@ -67,9 +69,9 @@
       "expect"
     ],
     "ignore": [
-      "_marko/**",
       "build/**",
       "coverage/**",
+      "data/**",
       "public/**"
     ]
   }
