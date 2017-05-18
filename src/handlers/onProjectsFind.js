@@ -1,27 +1,17 @@
-import uuid from 'uuid'
 import Debug from 'debug'
 import request from 'request'
-
-import Actions from '../Actions'
 
 const debug = Debug('docktor:actions')
 
 const handler = (context) => {
   debug('onProjectCreate')
   context.setState({working: true})
-  let project = {
-    id: uuid.v4(),
-    name: 'New project',
-    updatedAt: new Date(),
-    createdAt: new Date()
-  }
   request({
-    method: 'POST',
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json'
     },
     json: true,
-    body: project,
     uri: window.location.origin + '/api/projects'
   }, (error, response, body) => {
     if (error) {
@@ -29,8 +19,9 @@ const handler = (context) => {
       return context.setState({working: false})
     }
     if (response.statusCode === 200) {
-      debug('project created %o', project)
-      return Actions.projectsFind()
+      let projects = body
+      debug('projects listing %o', projects)
+      return context.setState({loading: false, message: '...', projects})
     }
     console.error(body)
     return context.setState({working: false})

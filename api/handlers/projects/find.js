@@ -8,7 +8,7 @@ const map = require('lodash').map
 module.exports = {
   auth: false,
   handler (request, reply) {
-    const dirpath = path.resolve(__dirname, '../../data/projects')
+    const dirpath = path.resolve(__dirname, '../../../data/projects')
     const patternPath = dirpath + '/**/*.yml'
     const patternFiles = glob.sync(patternPath, {
       nodir: true,

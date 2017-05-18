@@ -11,7 +11,7 @@ module.exports = {
     const year = new Date(request.payload.createdAt).getUTCFullYear()
     const month = new Date(request.payload.createdAt).getUTCMonth()
     const day = new Date(request.payload.createdAt).getUTCDate()
-    const filepath = path.resolve(__dirname, '../../data/projects', year.toString(), ('0' + (month + 1)).slice(-2), day.toString(), request.payload.id + '.yml')
+    const filepath = path.resolve(__dirname, '../../../data/projects', year.toString(), ('0' + (month + 1)).slice(-2), day.toString(), request.payload.id + '.yml')
     console.log(filepath)
     fse.ensureFileSync(filepath)
     fse.writeFileSync(filepath, data)

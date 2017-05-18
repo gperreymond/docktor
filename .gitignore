@@ -39,5 +39,5 @@ jspm_packages
 # React
 build
 
-#Infra
-api/data
+# Infra
+data

@@ -14,6 +14,8 @@ class Store extends Reflux.Store {
       // loader
       loading: true,
       message: '...',
+      // work in progress
+      working: false,
       // data
       projects: {
         total_rows: 0,
@@ -31,6 +33,7 @@ class Store extends Reflux.Store {
   onPageInitialize (page) { this.handlers.onPageInitialize(page, this) }
   onPageComplete (page) { this.handlers.onPageComplete(page, this) }
   onProjectCreate () { this.handlers.onProjectCreate(this) }
+  onProjectsFind () { this.handlers.onProjectsFind(this) }
 }
 
 export default Store
