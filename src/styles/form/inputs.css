@@ -1,0 +1,14 @@
+input[type=text].project-name {
+  border: none;
+  padding: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  width: 100%
+}
+
+input[type=text].project-name:focus {
+  border-bottom: dashed 1px #5da3c7;
+}

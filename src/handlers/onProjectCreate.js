@@ -11,9 +11,7 @@ const handler = (context) => {
   context.setState({loading: true, message: 'Creating project...'})
   let project = {
     id: uuid.v4(),
-    name: 'New project',
-    updatedAt: new Date(),
-    createdAt: new Date()
+    name: 'New project'
   }
   request({
     method: 'POST',

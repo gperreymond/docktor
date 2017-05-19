@@ -6,6 +6,7 @@ const Actions = Reflux.createActions([
   'pageComplete',
   'projectCreate',
   'projectLoad',
+  'projectUpdate',
   'projectsFind'
 ])
 

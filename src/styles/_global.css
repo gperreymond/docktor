@@ -35,8 +35,13 @@ a:hover {
   text-decoration: underline;
 }
 
+textarea, input, button {
+  outline: none;
+}
+
 @import './appbar.css';
 @import './appbar-nav.css';
 @import './container.css';
 @import './cards.css';
+@import './form/inputs.css';
 @import './form/buttons.css';

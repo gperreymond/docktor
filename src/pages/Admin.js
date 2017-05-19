@@ -23,7 +23,7 @@ const None = () => {
   )
 }
 
-class Stacks extends Reflux.Component {
+class Admin extends Reflux.Component {
   constructor (props) {
     super(props)
     this.pageName = 'Admin' // for debug only
@@ -57,14 +57,14 @@ class Stacks extends Reflux.Component {
     if (this.props.match.params.container === prevProps.match.params.container) {
       return false
     }
-    debug('componentDidUpdate %s %s', this.pageName, this.props.match.params.container)
+    debug('componentDidUpdate %s %s', this.pageName, this.props.match.params)
     document.title = capitalize(this.props.match.params.container) + ' | Docktor'
     switch (this.props.match.params.container) {
       case 'projects':
         this.pageContainer = <AdminProjects />
         break
       case 'project':
-        this.pageContainer = <AdminProjectActions />
+        this.pageContainer = <AdminProjectActions project={this.props.match.params.id} />
         break
       case 'pages':
         this.pageContainer = <None />
@@ -77,9 +77,9 @@ class Stacks extends Reflux.Component {
   }
   render () {
     debug('render %s', this.pageName)
-    if (this.state.loading) {
+    /* if (this.state.loading) {
       return (<AppBar {...this.state} pageName={this.pageName} match={this.props.match} />)
-    }
+    } */
     return (
       <div>
         <AppBar {...this.state} pageName={this.pageName} match={this.props.match} />
@@ -91,4 +91,4 @@ class Stacks extends Reflux.Component {
   }
 }
 
-export default Stacks
+export default Admin

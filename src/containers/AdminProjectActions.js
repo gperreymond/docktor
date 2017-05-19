@@ -15,7 +15,9 @@ class AdminProjectActions extends Reflux.Component {
     this.containerName = 'AdminProjectActions' // for debug only
     debug('constructor %s %o', this.containerName, this.props.project)
     this.store = Store
-    this.handlerChangeName = (name) => Actions.projectUpdate({name})
+    this.handlerChangeName = (e) => {
+      Actions.projectUpdate('name', e.target.value)
+    }
   }
   componentDidMount () {
     debug('componentDidMount %s', this.containerName, this.props.project)
@@ -32,7 +34,7 @@ class AdminProjectActions extends Reflux.Component {
     }
     return (
       <div className="box">
-        <input className="project-name" value={this.state.currentProject.name} onChange={this.handlerChangeName} />
+        <input type="text" className="project-name" defaultValue={this.state.currentProject.name} onChange={this.handlerChangeName} />
       </div>
     )
   }

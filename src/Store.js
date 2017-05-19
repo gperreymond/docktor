@@ -25,15 +25,12 @@ class Store extends Reflux.Store {
     debug('constructor')
     this.listenables = [Actions]
     this.handlers = new Handlers()
-    // couchdb, pouchdb
-    this.databases = {
-      projects: false
-    }
   }
   onPageInitialize (page) { this.handlers.onPageInitialize(page, this) }
   onPageComplete (page) { this.handlers.onPageComplete(page, this) }
   onProjectCreate () { this.handlers.onProjectCreate(this) }
   onProjectsFind () { this.handlers.onProjectsFind(this) }
+  onProjectUpdate (key, value) { this.handlers.onProjectUpdate(key, value, this) }
   onProjectLoad (id) { this.handlers.onProjectLoad(id, this) }
 }
 
