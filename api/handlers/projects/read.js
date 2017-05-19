@@ -3,6 +3,7 @@
 const path = require('path')
 const glob = require('glob')
 const YAML = require('yamljs')
+const Boom = require('boom')
 
 module.exports = {
   auth: false,
@@ -16,7 +17,7 @@ module.exports = {
     if (patternFiles.length === 1) {
       return reply(YAML.load(patternFiles[0]))
     } else {
-      return reply({})
+      return reply(Boom.notFound('project not found.'))
     }
   }
 }

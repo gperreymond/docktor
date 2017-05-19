@@ -30,7 +30,7 @@ class Store extends Reflux.Store {
   onPageComplete (page) { this.handlers.onPageComplete(page, this) }
   onProjectCreate () { this.handlers.onProjectCreate(this) }
   onProjectsFind () { this.handlers.onProjectsFind(this) }
-  onProjectUpdate (key, value) { this.handlers.onProjectUpdate(key, value, this) }
+  onProjectUpdate (id, data) { this.handlers.onProjectUpdate(id, data, this) }
   onProjectLoad (id) { this.handlers.onProjectLoad(id, this) }
 }
 

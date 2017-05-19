@@ -1,5 +1,6 @@
-input[type=text].project-name {
+input[type=text].no-border {
   border: none;
+  border-bottom: solid 1px #ffffff;
   padding: 0;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -9,6 +10,10 @@ input[type=text].project-name {
   width: 100%
 }
 
-input[type=text].project-name:focus {
+input[type=text].no-border:hover {
+  border-bottom: dashed 1px #e0e0e0;
+}
+
+input[type=text].no-border:focus {
   border-bottom: dashed 1px #5da3c7;
 }

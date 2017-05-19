@@ -23,11 +23,11 @@ class AdminProjects extends Reflux.Component {
     debug('componentDidMount %s', this.containerName)
   }
   render () {
-    if (this.props.loading) {
+    /* if (this.props.loading) {
       return (
         <div />
       )
-    }
+    } */
     return (
       <div>
         {this.state.projects.total_rows === 0 &&
@@ -42,7 +42,7 @@ class AdminProjects extends Reflux.Component {
         }
         {this.state.projects.total_rows > 0 &&
           <div className="projects-cards-box">
-            <a onClick={this.handlerProjectCreate} className="button green huge add">+</a>
+            <a onClick={this.handlerProjectCreate} className="button green huge right">+</a>
             <div className="projects-cards">
               {this.state.projects.rows.map((item) => {
                 return (<ProjectCard key={item.id} data={item} />)

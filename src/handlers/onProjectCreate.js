@@ -27,7 +27,7 @@ const handler = (context) => {
       return context.setState({loading: false, message: '...'})
     }
     if (response.statusCode === 200) {
-      debug('project created %o', project)
+      debug('project created %o', body)
       return Actions.projectsFind()
     }
     console.error(body)

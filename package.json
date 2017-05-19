@@ -1,6 +1,6 @@
 {
   "name": "docktor",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Surveys Platform, no databases",
   "proxy": "http://localhost:4000",
   "scripts": {
@@ -42,7 +42,8 @@
     "yamljs": "0.2.10"
   },
   "devDependencies": {
-    "debug": "2.6.7",
+    "boom": "4.3.1",
+    "debug": "2.6.8",
     "nodemon": "1.11.0",
     "react": "15.5.4",
     "react-addons-test-utils": "15.5.1",
@@ -51,7 +52,7 @@
     "react-dropzone": "3.13.1",
     "react-markdown": "2.5.0",
     "react-router-dom": "4.1.1",
-    "react-scripts": "0.9.5",
+    "react-scripts": "1.0.0",
     "reflux": "6.4.1",
     "snazzy": "7.0.0",
     "standard": "10.0.2",

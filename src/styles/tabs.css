@@ -1,0 +1,52 @@
+.tabs {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+  margin: 0 0 32px;
+  padding: 0;
+  height: 55px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.tabs > li {
+  display: block;
+  float: left;
+  margin-right: 10px;
+}
+
+.tabs > li a {
+  display: block;
+  width: 90px;
+  height: 75px;
+  padding-top: 13px;
+  color: inherit;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 1px 1px 0 rgba(118, 153, 194, 0.32);
+  background: #fff no-repeat;
+  background-position: top 13px center;
+  background-size: 25px 25px;
+  cursor: pointer;
+  transition: .3s background-color;
+  line-height: 75px;
+  min-height: 75px;
+  border: 3px solid #e3eefb;
+  border-radius: 5px;
+}
+
+.tabs > li a._selected {
+  border-color: #5da3c7;
+}
+.tabs > li a._actions {
+  background-image: url('images/actions.svg');
+}
+.tabs > li a._variables {
+  background-image: url('images/variables.svg');
+}
+.tabs > li a._settings {
+  background-image: url('images/settings.svg');
+}

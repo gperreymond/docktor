@@ -19,9 +19,26 @@ body {
 .float-right {
   float: right;
 }
-
+.fullwidth {
+  width: 100%;
+}
 .text-center {
   text-align: center;
+}
+
+.text.dark-blue {
+  color: #5da3c7;
+}
+.text.green {
+  color: #77b300;
+}
+.text.orange {
+  color: #dda055;
+}
+
+p {
+  color: #242628;
+  font-size: 14px;
 }
 
 a {
@@ -30,7 +47,6 @@ a {
   outline: none;
   cursor: pointer;
 }
-
 a:hover {
   text-decoration: underline;
 }
@@ -43,5 +59,7 @@ textarea, input, button {
 @import './appbar-nav.css';
 @import './container.css';
 @import './cards.css';
+@import './tabs.css';
+@import './actions.css';
 @import './form/inputs.css';
 @import './form/buttons.css';

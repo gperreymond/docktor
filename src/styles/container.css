@@ -10,11 +10,31 @@
   position: relative;
   background: #fff;
   box-shadow: 0 0 1px 0 rgba(61, 119, 180, 0.12), 0 0.25rem 12px 0 rgba(91, 139, 199, 0.24);
-  border-radius: 4px;
+  border-radius: 5px;
   position: relative;
   padding: 34px;
   opacity: 1;
   margin-top: 8px;
+}
+
+.normal {
+  width: 100%;
+}
+.flex {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+.flex.grey, .normal.grey {
+  padding: 10px;
+  border: #f6f9ff;
+  border-radius: 5px;
+  background-color: #f6f9ff;
+  color: #8dbfd8;
+}
+
+.flexitem {
+  margin: 4px;
 }
 
 .container-title.error {
