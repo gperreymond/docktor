@@ -18,6 +18,18 @@ input[type=text].no-border:focus {
   border-bottom: dashed 1px #5da3c7;
 }
 
+input[type=text].no-border.smaller {
+  border-bottom: dashed 1px #5da3c7;
+  margin-top: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 17px;
+  line-height: 17px;
+  height: 30px;
+  font-weight: normal;
+  background: none;
+}
+
 input[type=text].editable, textarea.editable {
   resize: none;
   border-radius: 5px;

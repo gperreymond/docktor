@@ -26,6 +26,7 @@ a.action:hover {
   border-radius: 10px;
   width: 100%;
   padding-left: 90px;
+  background: #f6f6f6;
 }
 
 a.action-name {

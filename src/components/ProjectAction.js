@@ -9,7 +9,8 @@ import FontAwesome from 'react-fontawesome'
 
 const iconType = {
   'question-choices': 'question-circle',
-  'question-number': 'sort-numeric-asc'
+  'question-number': 'sort-numeric-asc',
+  'content-message': 'comments'
 }
 
 class ProjectAction extends Reflux.Component {
@@ -29,9 +30,9 @@ class ProjectAction extends Reflux.Component {
   render () {
     return (
       <div className="action-box">
-        <FontAwesome className="float-left text light-blue" fixedWidth width={68} size="5x" style={{position: 'fixed', marginTop: '-15px'}} name={iconType[this.props.data.type]} />
+        <FontAwesome className="float-left text dark-blue" fixedWidth width={68} size="4x" style={{opacity: '0.75', position: 'fixed', marginTop: '-8px'}} name={iconType[this.props.data.type]} />
         <div className="action-card flex">
-          <input type="text" className="no-border" defaultValue={this.props.data.name} onChange={this.handlerChangeName} />
+          <input type="text" className="no-border smaller" defaultValue={this.props.data.name} onChange={this.handlerChangeName} />
           <a onClick={this.handleEditAction} className="flexitem"><FontAwesome className="text dark-blue" size="2x" name="pencil-square" /></a>
         </div>
         <a className="action-add" onClick={this.handleCreateAction}><FontAwesome className="text dark-blue" size="2x" name="plus-circle" /></a>

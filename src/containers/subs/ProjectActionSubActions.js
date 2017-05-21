@@ -6,7 +6,23 @@ import Debug from 'debug'
 
 import Actions from './../../Actions'
 import Store from './../../Store'
+
+/*
+{!this.state.currentProject.actions &&
+  <a className="action" onClick={this.handleCreateAction}><FontAwesome className="text green" style={{marginTop: '16px', marginRight: '10px'}} size="2x" name="plus-circle" />
+    <h4>Ajoutez votre première action</h4>
+  </a>
+}
+{this.state.currentProject.actions &&
+  <div>
+    <br /><br />
+    {this.state.currentProject.actions.map((item) => {
+      return (<ProjectAction handleEditAction={this.handleEditAction} handleCreateAction={this.handleCreateAction} key={item.id} index={this.state.currentProject.actions.indexOf(item)} data={item} />)
+    })}
+  </div>
+}
 import ProjectAction from './../../components/ProjectAction'
+*/
 
 import FontAwesome from 'react-fontawesome'
 
@@ -51,12 +67,14 @@ class ProjectActionSubActions extends Reflux.Component {
           <div>
             <h3><a className="text dark-blue" onClick={this.handleBack}>Retour</a> > Edition d’une action</h3>
             <div className="normal grey">
+              <h4>Identifiant de l’action</h4>
+              <input type="text" className="editable" defaultValue={this.state.currentProject.actions[this.state.nextIndex].id} readOnly="readonly" />
               <h4>Nom de l’action</h4>
               <input type="text" className="editable" defaultValue={this.state.currentProject.actions[this.state.nextIndex].name} onChange={(e) => { this.state.currentProject.actions[this.state.nextIndex].name = e.target.value }} />
               <h4>Question de l’action</h4>
               <textarea className="editable" rows="5" defaultValue={this.state.currentProject.actions[this.state.nextIndex].description} onChange={(e) => { this.state.currentProject.actions[this.state.nextIndex].description = e.target.value }} />
               <h4>Réponses proposées</h4>
-              <input type="text" className="editable" />
+              <input type="text" className="editable" defaultValue={this.state.currentProject.actions[this.state.nextIndex].propositions} onChange={(e) => { this.state.currentProject.actions[this.state.nextIndex].propositions = e.target.value }} />
               <br /><br />
             </div>
           </div>
@@ -82,21 +100,9 @@ class ProjectActionSubActions extends Reflux.Component {
         }
         {this.state.tab === 'list' &&
           <div>
-            <h3 className="text dark-blue">Séquence d’actions</h3>
+            <h3 className="text dark-blue">Séquences d’actions</h3>
             <p>Une séquence est un ensemble d’actions successives, qui peuvent avoir des conditions de déclenchement. A la fin d’une séquence des actions peuvent être déclencher également.</p>
-            {!this.state.currentProject.actions &&
-              <a className="action" onClick={this.handleCreateAction}><FontAwesome className="text green" style={{marginTop: '16px', marginRight: '10px'}} size="2x" name="plus-circle" />
-                <h4>Ajoutez votre première action</h4>
-              </a>
-            }
-            {this.state.currentProject.actions &&
-              <div>
-                <br /><br />
-                {this.state.currentProject.actions.map((item) => {
-                  return (<ProjectAction handleEditAction={this.handleEditAction} handleCreateAction={this.handleCreateAction} key={item.id} index={this.state.currentProject.actions.indexOf(item)} data={item} />)
-                })}
-              </div>
-            }
+            
             <br />
           </div>
         }
