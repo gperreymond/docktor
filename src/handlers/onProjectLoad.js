@@ -5,7 +5,7 @@ const debug = Debug('docktor:actions')
 
 const handler = (id, context) => {
   debug('onProjectLoad %s', id)
-  context.setState({loading: true, message: 'Loading project...'})
+  context.setState({loading: true, message: 'Chargement du project...'})
   request({
     method: 'GET',
     headers: {

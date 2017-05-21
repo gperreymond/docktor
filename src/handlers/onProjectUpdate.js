@@ -7,7 +7,7 @@ const debug = Debug('docktor:actions')
 
 const handler = (id, data, context) => {
   debug('onProjectUpdate', id, data)
-  context.setState({loading: true, message: 'Updating project...'})
+  context.setState({loading: true, message: 'Sauvegarde en cours...'})
   request({
     method: 'PATCH',
     headers: {

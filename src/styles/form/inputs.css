@@ -17,3 +17,14 @@ input[type=text].no-border:hover {
 input[type=text].no-border:focus {
   border-bottom: dashed 1px #5da3c7;
 }
+
+input[type=text].editable, textarea.editable {
+  resize: none;
+  border-radius: 5px;
+  border: solid 2px #e3eefb;
+  padding: 8px;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: normal;
+  width: 100%
+}

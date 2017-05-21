@@ -4,6 +4,7 @@ import onProjectCreate from './handlers/onProjectCreate'
 import onProjectsFind from './handlers/onProjectsFind'
 import onProjectUpdate from './handlers/onProjectUpdate'
 import onProjectLoad from './handlers/onProjectLoad'
+import onProjectActionCreate from './handlers/onProjectActionCreate'
 
 class Handlers {
 }
@@ -14,5 +15,6 @@ Handlers.prototype.onProjectCreate = onProjectCreate
 Handlers.prototype.onProjectsFind = onProjectsFind
 Handlers.prototype.onProjectUpdate = onProjectUpdate
 Handlers.prototype.onProjectLoad = onProjectLoad
+Handlers.prototype.onProjectActionCreate = onProjectActionCreate
 
 export default Handlers

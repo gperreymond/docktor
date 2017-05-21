@@ -23,7 +23,7 @@ class ProjectCard extends Reflux.Component {
     return (
       <div className="project-card" onClick={this.redirect}>
         <h3><Link className="project-link" to={'/admin/project/' + this.props.data.id}>{this.props.data.name.toLowerCase()}</Link></h3>
-        <div className="project-update-date">Last update <strong>{diff} day(s) ago</strong></div>
+        <div className="project-update-date">Dernière mise à jour <strong>{diff} jour(s)</strong></div>
       </div>
     )
   }

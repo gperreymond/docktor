@@ -8,10 +8,10 @@ const debug = Debug('docktor:actions')
 
 const handler = (context) => {
   debug('onProjectCreate')
-  context.setState({loading: true, message: 'Creating project...'})
+  context.setState({loading: true, message: 'Creation du projet...'})
   let project = {
     id: uuid.v4(),
-    name: 'New project'
+    name: 'Nouveau projet'
   }
   request({
     method: 'POST',

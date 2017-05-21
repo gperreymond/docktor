@@ -11,7 +11,7 @@ class AppBarMenu extends Reflux.Component {
       return (
         <nav className="nav">
           <ul>
-            <li className={(this.props.match.params.container === 'projects' || this.props.match.params.container === 'project') ? 'button orange' : 'button white'}><Link to="/admin/projects">Projects</Link></li>
+            <li className={(this.props.match.params.container === 'projects' || this.props.match.params.container === 'project') ? 'button orange' : 'button white'}><Link to="/admin/projects">Projets</Link></li>
             <li className={(this.props.match.params.container === 'plugins') ? 'button orange' : 'button white'}><Link to="/admin/plugins">Plugins</Link></li>
           </ul>
         </nav>

@@ -32,11 +32,11 @@ class AdminProjects extends Reflux.Component {
       <div>
         {this.state.projects.total_rows === 0 &&
           <div className="box">
-            <div className="container-title">Welcome to the workspace projects</div>
+            <div className="container-title">Bienvenue sur l’espace projets</div>
             <div>
-              <div className="container-desc">No project found at the moment!</div>
+              <div className="container-desc">Aucun projet pour le moment !</div>
               <br /><br />
-              <div className="text-center"><a onClick={this.handlerProjectCreate} className="button green huge">New project</a></div>
+              <div className="text-center"><a onClick={this.handlerProjectCreate} className="button green huge">Nouveau projet</a></div>
             </div>
           </div>
         }

@@ -5,7 +5,7 @@ const debug = Debug('docktor:actions')
 
 const handler = (context) => {
   debug('onProjectsFind')
-  context.setState({loading: true, message: 'Initializing projects...'})
+  context.setState({loading: true, message: 'Initialisation des projets...'})
   request({
     method: 'GET',
     headers: {

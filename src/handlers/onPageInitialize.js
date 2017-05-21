@@ -7,7 +7,7 @@ const debug = Debug('docktor:actions')
 
 const handler = (page, context) => {
   debug('onPageInitialize %s', page)
-  context.setState({loading: true, message: 'Initializing page...', currentProject: false})
+  context.setState({loading: true, message: 'Initialisation de la page...', currentProject: false})
   request({
     method: 'GET',
     headers: {

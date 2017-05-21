@@ -7,7 +7,8 @@ const Actions = Reflux.createActions([
   'projectCreate',
   'projectLoad',
   'projectUpdate',
-  'projectsFind'
+  'projectsFind',
+  'projectActionCreate'
 ])
 
 export default Actions

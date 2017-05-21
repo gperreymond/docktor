@@ -11,6 +11,8 @@ import ProjectActionSubActions from './subs/ProjectActionSubActions'
 import ProjectActionSubVariables from './subs/ProjectActionSubVariables'
 import ProjectActionSubSettings from './subs/ProjectActionSubSettings'
 
+import FontAwesome from 'react-fontawesome'
+
 const debug = Debug('docktor:containers')
 
 class AdminProjectActions extends Reflux.Component {
@@ -56,17 +58,17 @@ class AdminProjectActions extends Reflux.Component {
       <div className="box">
         <div className="flex">
           <input type="text" className="no-border" defaultValue={this.state.currentProject.name} onChange={this.handlerChangeName} />
-          <a onClick={this.handlerProjectUpdate} className="button green right flexitem">Save</a>
+          <a onClick={this.handlerProjectUpdate} className="button green right flexitem"><span>Sauver</span></a>
         </div>
         <br />
         <ul className="tabs">
-          <li><a className={(this.state.tab === 'actions') ? '_actions _selected' : '_actions'} onClick={this.handlerSelectActions}>Actions</a></li>
-          <li><a className={(this.state.tab === 'variables') ? '_variables _selected' : '_variables'} onClick={this.handlerSelectVariables}>Variables</a></li>
-          <li><a className={(this.state.tab === 'settings') ? '_settings _selected' : '_settings'} onClick={this.handlerSelectSettings}>Settings</a></li>
+          <li onClick={this.handlerSelectActions} className={(this.state.tab === 'actions') ? '_selected' : ''}><FontAwesome style={{margin: 'auto'}} className="text dark-blue" size="2x" name="cog" /><a onClick={this.handlerSelectActions}>Actions</a></li>
+          <li onClick={this.handlerSelectVariables} className={(this.state.tab === 'variables') ? '_selected' : ''}><FontAwesome style={{margin: 'auto'}} className="text purple" size="2x" name="columns" /><a onClick={this.handlerSelectVariables}>Variables</a></li>
+          <li onClick={this.handlerSelectSettings} className={(this.state.tab === 'settings') ? '_selected' : ''}><FontAwesome style={{margin: 'auto'}} className="text orange" size="2x" name="sliders" /><a onClick={this.handlerSelectSettings}>Paramètres</a></li>
         </ul>
         <br />
         {this.state.tab === 'actions' &&
-          <ProjectActionSubActions />
+          <ProjectActionSubActions defaultTab="list" />
         }
         {this.state.tab === 'variables' &&
           <ProjectActionSubVariables />
