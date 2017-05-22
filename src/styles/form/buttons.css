@@ -49,9 +49,14 @@
 
 /* COLORS */
 
+.button.dark-red {
+  color: #fff;
+  background-color: #c64e4e;
+}
+
 .button.green {
   color: #fff;
-  background-color: #77b300;
+  background-color: #77b382;
 }
 
 .button.orange {

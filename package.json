@@ -1,11 +1,11 @@
 {
   "name": "docktor",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Surveys Platform, no databases",
   "proxy": "http://localhost:4000",
   "scripts": {
     "start": "react-scripts start",
-    "start:api": "NODE_ENV=development node_modules/.bin/nodemon --config nodemon.json api",
+    "start:server": "NODE_ENV=development node_modules/.bin/nodemon --config nodemon.json api",
     "test:standard": "node_modules/.bin/standard --fix --verbose | snazzy",
     "build": "react-scripts build"
   },
@@ -50,10 +50,10 @@
     "react-cookie": "2.0.7",
     "react-dom": "15.5.4",
     "react-dropzone": "3.13.1",
-    "react-fontawesome": "^1.6.1",
+    "react-fontawesome": "1.6.1",
     "react-markdown": "2.5.0",
     "react-router-dom": "4.1.1",
-    "react-scripts": "1.0.3",
+    "react-scripts": "1.0.4",
     "reflux": "6.4.1",
     "snazzy": "7.0.0",
     "standard": "10.0.2",

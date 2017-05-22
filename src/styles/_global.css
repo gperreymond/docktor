@@ -29,26 +29,6 @@ body {
   text-align: center;
 }
 
-.text.purple {
-  color: #cc6699;
-}
-.text.light-blue {
-  color: #e3eefb;
-}
-.text.dark-blue {
-  color: #5da3c7;
-}
-.text.green {
-  color: #77b300;
-}
-.text.orange {
-  color: #dda055;
-}
-
-p {
-  color: #242628;
-}
-
 a {
   color: #242628;
   text-decoration: none;
@@ -63,6 +43,7 @@ textarea, input, button {
   outline: none;
 }
 
+@import './colors.css';
 @import './appbar.css';
 @import './appbar-nav.css';
 @import './container.css';

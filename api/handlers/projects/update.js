@@ -26,7 +26,7 @@ module.exports = {
       const day = new Date(oldData.createdAt).getUTCDate()
       const filepath = path.resolve(__dirname, '../../../data/projects', year.toString(), ('0' + (month + 1)).slice(-2), day.toString(), request.payload.id + '.yml')
       fse.ensureFileSync(filepath)
-      fse.writeFileSync(filepath, YAML.stringify(data, 4))
+      fse.writeFileSync(filepath, YAML.stringify(data, 5))
       return reply(newData)
     } else {
       return reply(Boom.notFound('project not found.'))

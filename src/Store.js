@@ -33,6 +33,7 @@ class Store extends Reflux.Store {
   onProjectUpdate (id, data) { this.handlers.onProjectUpdate(id, data, this) }
   onProjectLoad (id) { this.handlers.onProjectLoad(id, this) }
   onProjectActionCreate (project, type, position) { this.handlers.onProjectActionCreate(project, type, position, this) }
+  onProjectActionTriggerCreate (project) { this.handlers.onProjectActionTriggerCreate(project, this) }
 }
 
 export default Store

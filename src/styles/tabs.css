@@ -1,3 +1,5 @@
+/* *********************************** */
+
 .tabs {
   display: flex;
   flex-direction: row;
@@ -33,4 +35,43 @@
 
 .tabs > li._selected {
   border-color: #5da3c7;
+}
+
+/* *********************************** */
+
+.tabs-mini {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  list-style: none;
+}
+
+.tabs-mini > li {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: 30px;
+  height: 30px;
+}
+
+.tabs-mini > li > a.number {
+  border: 2px solid #e3eefb;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  line-height: 26px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.tabs-mini > li > a.number.selected {
+  border: 2px solid #5da3c7;
 }

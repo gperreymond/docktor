@@ -2,29 +2,12 @@
 
 import React from 'react'
 import Reflux from 'reflux'
+import FontAwesome from 'react-fontawesome'
 import Debug from 'debug'
 
 import Actions from './../../Actions'
 import Store from './../../Store'
-
-/*
-{!this.state.currentProject.actions &&
-  <a className="action" onClick={this.handleCreateAction}><FontAwesome className="text green" style={{marginTop: '16px', marginRight: '10px'}} size="2x" name="plus-circle" />
-    <h4>Ajoutez votre première action</h4>
-  </a>
-}
-{this.state.currentProject.actions &&
-  <div>
-    <br /><br />
-    {this.state.currentProject.actions.map((item) => {
-      return (<ProjectAction handleEditAction={this.handleEditAction} handleCreateAction={this.handleCreateAction} key={item.id} index={this.state.currentProject.actions.indexOf(item)} data={item} />)
-    })}
-  </div>
-}
 import ProjectAction from './../../components/ProjectAction'
-*/
-
-import FontAwesome from 'react-fontawesome'
 
 const debug = Debug('docktor:containers:subs')
 
@@ -34,6 +17,7 @@ class ProjectActionSubActions extends Reflux.Component {
     this.containerName = 'ProjectActionSubActions' // for debug only
     this.state = {
       tab: this.props.defaultTab,
+      selectedTrigger: 1,
       nextIndex: 0
     }
     this.store = Store
@@ -46,16 +30,19 @@ class ProjectActionSubActions extends Reflux.Component {
     this.handleEditAction = (e, index) => {
       this.setState({tab: 'edit', nextIndex: index})
     }
+    this.handleCreateTrigger = (e) => {
+      Actions.projectActionTriggerCreate(this.state.currentProject)
+    }
     this.handleQuestionChoice = (e) => {
-      Actions.projectActionCreate(this.state.currentProject, 'question-choices', this.state.nextIndex + 1)
+      Actions.projectActionCreate(this.state.currentProject.triggers[this.state.selectedTrigger - 1], 'question-choices', this.state.nextIndex + 1)
       this.setState({tab: 'list', nextIndex: 0})
     }
     this.handleQuestionNumber = (e) => {
-      Actions.projectActionCreate(this.state.currentProject, 'question-number', this.state.nextIndex + 1)
+      Actions.projectActionCreate(this.state.currentProject.triggers[this.state.selectedTrigger - 1], 'question-number', this.state.nextIndex + 1)
       this.setState({tab: 'list', nextIndex: 0})
     }
     this.handleContentMessage = (e) => {
-      Actions.projectActionCreate(this.state.currentProject, 'content-message', this.state.nextIndex + 1)
+      Actions.projectActionCreate(this.state.currentProject.triggers[this.state.selectedTrigger - 1], 'content-message', this.state.nextIndex + 1)
       this.setState({tab: 'list', nextIndex: 0})
     }
   }
@@ -68,13 +55,13 @@ class ProjectActionSubActions extends Reflux.Component {
             <h3><a className="text dark-blue" onClick={this.handleBack}>Retour</a> > Edition d’une action</h3>
             <div className="normal grey">
               <h4>Identifiant de l’action</h4>
-              <input type="text" className="editable" defaultValue={this.state.currentProject.actions[this.state.nextIndex].id} readOnly="readonly" />
+              <input type="text" className="editable" defaultValue={this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].id} readOnly="readonly" />
               <h4>Nom de l’action</h4>
-              <input type="text" className="editable" defaultValue={this.state.currentProject.actions[this.state.nextIndex].name} onChange={(e) => { this.state.currentProject.actions[this.state.nextIndex].name = e.target.value }} />
+              <input type="text" className="editable" defaultValue={this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].name} onChange={(e) => { this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].name = e.target.value }} />
               <h4>Question de l’action</h4>
-              <textarea className="editable" rows="5" defaultValue={this.state.currentProject.actions[this.state.nextIndex].description} onChange={(e) => { this.state.currentProject.actions[this.state.nextIndex].description = e.target.value }} />
+              <textarea className="editable" rows="5" defaultValue={this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].description} onChange={(e) => { this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].description = e.target.value }} />
               <h4>Réponses proposées</h4>
-              <input type="text" className="editable" defaultValue={this.state.currentProject.actions[this.state.nextIndex].propositions} onChange={(e) => { this.state.currentProject.actions[this.state.nextIndex].propositions = e.target.value }} />
+              <input type="text" className="editable" defaultValue={this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].propositions} onChange={(e) => { this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions[this.state.nextIndex].propositions = e.target.value }} />
               <br /><br />
             </div>
           </div>
@@ -102,8 +89,26 @@ class ProjectActionSubActions extends Reflux.Component {
           <div>
             <h3 className="text dark-blue">Séquences d’actions</h3>
             <p>Une séquence est un ensemble d’actions successives, qui peuvent avoir des conditions de déclenchement. A la fin d’une séquence des actions peuvent être déclencher également.</p>
-            
             <br />
+            <ul className="tabs-mini">
+              {this.state.currentProject.triggers && this.state.currentProject.triggers.map((item) => {
+                return (<li key={item.id}><a onClick={(e) => { this.setState({selectedTrigger: item.name}) }} className={(item.name === this.state.selectedTrigger) ? 'text dark-blue number selected' : 'text dark-blue number'}>{item.name}</a></li>)
+              })}
+              <li><a onClick={this.handleCreateTrigger} className="text dark-blue number">+</a></li>
+            </ul>
+            {!this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions &&
+              <a className="action" onClick={this.handleCreateAction}><FontAwesome className="text green" style={{marginTop: '16px', marginRight: '10px'}} size="2x" name="plus-circle" />
+                <h4>Ajoutez votre première action</h4>
+              </a>
+            }
+            {this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions &&
+              <div>
+                <br />
+                {this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions.map((item) => {
+                  return (<ProjectAction handleEditAction={this.handleEditAction} handleCreateAction={this.handleCreateAction} key={item.id} index={this.state.currentProject.triggers[this.state.selectedTrigger - 1].actions.indexOf(item)} data={item} />)
+                })}
+              </div>
+            }
           </div>
         }
       </div>
