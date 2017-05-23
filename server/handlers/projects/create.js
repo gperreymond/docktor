@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const uuid = require('uuid')
 const fse = require('fs-extra')
 const YAML = require('yamljs')
 
@@ -10,6 +11,11 @@ module.exports = {
     let data = request.payload
     data.createdAt = new Date()
     data.updatedAt = new Date()
+    data.triggers = []
+    data.triggers.push({
+      id: uuid.v4(),
+      name: 1
+    })
     const year = new Date(data.createdAt).getUTCFullYear()
     const month = new Date(data.createdAt).getUTCMonth()
     const day = new Date(data.createdAt).getUTCDate()
